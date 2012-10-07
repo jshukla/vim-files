@@ -17,4 +17,3 @@
 :set wildignore+=*.swp,*.tmp,*~ "exclude files from auto-completion
 :iab ff firefox
 ":set foldmethod=syntax         "use syntax based folds. zo, zc, zj, zk - open, close, next fold, prev fold
-
