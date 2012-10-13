@@ -16,4 +16,6 @@
 :set wildmenu                   "enhanced command-line completion
 :set wildignore+=*.swp,*.tmp,*~ "exclude files from auto-completion
 :iab ff firefox
+:set diffopt=filler,vertical    "show diff in vertical splits with filler (ex- output of :diffsplit <file>)
 ":set foldmethod=syntax         "use syntax based folds. zo, zc, zj, zk - open, close, next fold, prev fold
+":set tags=/my/dir/tags         "where to look for tags file
