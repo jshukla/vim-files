@@ -1,0 +1,163 @@
+c2/end - change text from cursor to 2nd occurrence of 'end'  
+:h movement -  help for movememnt
+:syntax enable
+:set syntax=c
+:u - undo the changes
+:3cw - change 3 words from cursor position
+:set hlsearch
+:set incsearch
+:%s/search/replace/gc - % searches all lines in buffer
+:set number
+:set hidden
+:e <filename>
+:delmarks a - deletes mark 'a'
+:e . - list the current directory
+:bp	- previous buffer
+:set list
+:set nolist
+:set list?
+:set list&
+:set softtabstop
+:set softtabstop?
+:set softtabstop=2
+:set softtabstop&
+:verbose set wildmode? - find out from where wildmode is set
+:options
+:set
+:help filetype
+:set filetype=c
+:set autochdir
+:set wildmode=list:longest - activate tab auto-completion for File paths
+:res +/-N - resize the current window
+:ls
+:bp - previous buffer
+:bn - next buffer
+:bd - buffer delete
+:bf - goes to first buffer
+:bl - goes to last buffer
+:ba - buffer all
+. repeats the last command except the above(starting with :)
+i - inserts the text where the cursor is
+I - inserts the text on the start of line
+d$ - deletes from under the cursor till end of line
+gg - to got the top of the file
+G - to go to the end of the file
+w - move 1 word fwd
+b - move 1 word backwards
+e - move 1 word fwd, cursor on edge of the word
+V - Line wise visual mode
+v - char wise visual mode
+x - delete the char under cursor
+ctrl-w s - split window horizontally
+ctrl-w v - split window vertically
+ctrl-w j - move focus down(same with h,l) 
+ctrl-w k - move focus up(")
+ctrl-w J - move buffer up 1 window(")
+ctrl-w K - move buffer down 1 window(")
+ctrl-w c - close window
+ctrl-w o - close all but current
+ctrl-w w - cycle focus
+ctrl-w p - focus previous window
+ctrl-w t - move to top left window
+ctrl-w b - move to bottom right window
+ctrl-w r - rotate the window clockwise
+ctrl-w R - rotate the window anticlockwise
+ctrl-w x
+ctrl-^ - open last edited file
+
+------------------------------------------------------
+------------------------------------------------------
+
+h, j, k, l - left, down, up, right key movement in command/normal mode
+j-> gj, k-> gk
+b(B), w(W) - move back, forward wordwise 
+0, ^, ge, e, $ - Go to line begin, First char on line, move back to word edge, move fwd to word edge, move to the line end............................................................
+g0, g^, gm, g$ - Go to the line begin, first char on line, line mid, line end
+Fx, fx  - go to the prev occurance of x, next occ of x
+; and , - repeats the prev char jump in fwd dir and backward dir consecutively
+H, M, L - move to the top, middle, bottom of screen
+ctrl b, ctrl u, ctrl y, ctrl e, ctrl d, ctrl f - go upward 1 screen, 1/2 screen, 1 line, go down 1 line, 1/2 screen, 1 screen
+zt, zz, zb - show current line to near top, near middle, near bottom
+42gg, 42G - go to line 42
+ctrl g - shows current cursor position in status bar 
+ma - mark cursor position with letter 'a'
+'a - jump to the beginning of the marked line only
+`a - jump to the exact line and column
+- Uppercase marks are global, lowecase are specific to a file
+d't - deletes text from cursor position till mark 't'
+'0/`0 - goes to line accessed before quitting vim
+'./`. - goes to line edited before quitting vim
+''/`` - goes to previous accessed jump location
+I,A - inserts in the begining, end of the line
+o,O - open a new blank line for writing below, above the cursor position
+r - replace a char at cursor postion n go back to command mode
+R - got to replace mode and then replace text
+dd or D - deletes the current line
+yy or Y - yank a line
+cc or C - change a line or enter insert mode
+c3w - change 3 words from the cursor position
+3J - move lines from below in the end of the current line
+ctrl-d ,ctrl-t - indent code to left, indent code to right
+<< , >> 	   - 	","
+2J or gJ - moves current line down by 2 lines and appends the text present below
+(,) - move to the begin of sentence, move to end of sentence
+{,} - move to begin of para, move to the end of para
+/search/+2 - place the cursor on 2nd line after the search pattern
+/search/e+3 - place the cursor on 3rd char after the search pattern
+d/search/e<Enter> - delete from current cursor position to end of search pattern
+y?search<Enter> - yank from cursor to previous occurence of search pattern
+% - moves to the matching closing bracket, matching end of if etc
+:'<,'>s/serach/replace - searches in the visually selected pattern
+:[range]g[lobal]/{pattern}/[cmd]
+:g/search-text/p - print all lines matching search-text
+:g/search/# - show lines and line numbers where search pattern occurs
+:g/^$/d - deletes blank lines
+:.,+10g/foo/d - delete matches from cursor through next 10 lines
+:.,'f+2g/foo/# - show line numbers through next 2 lines after mark 'f'
+:.,/bar/g/foo/d - delete lines through  next line matching 'bar'
+/<ctrl-r>/ - repeat the last search
+C-N 
+C-P
+:vmap > >gv - maps 1st to 2d in visual mode
+:imap <TAB> <C-N>
+:imap <S-TAB> <C-P>
+:ab ff Firefox
+:set foldmethod=syntax
+zM, zc, za, zo, zR - most folding, close folding, toggle between open and close fold, open a fold, reduce folding i.e open all folds
+zj, zk - got next and previous fold
+:set foldcolumn=1
+:'<,'> !unique
+:1,$ sort - to sort the lines in a file(ex - alphabetically)
+ggVG= - indents the whole file
+"0p - paste from the zero register.
+:set paste - disable automatic indentation
+"ayy - use register 'a' and yank line into it
+"ap - paste from the register 'a'
+"0p - paste from the zero register (contents of the last yank command)
+. - repeats the last change or delete in command mode
+@: - repeats the last command line command
+qadWWPjq - start recoring named a, delete a word, go fwd 2 words, paste the word, go 1 line down, stop recording
+@a - play recording named a (like above recording)
+]f, [f, gf - edit the file whose name is under or after the cursor
+
+------------------------------------------------------
+ctags commands:
+------------------------------------------------------
+
+vi −t tag - Start vi and position the cursor at the file and line where "tag" is defined.
+:ta tag - Find a tag.
+Ctrl-] - Find the tag under the cursor.
+Ctrl-T - Return to previous location before jump to tag (not widely implemented).
+
+------------------------------------------------------
+vimdiff commands:
+------------------------------------------------------
+
+:diffget -- modify current buffer to undo difference with another buffer
+:diffput -- modify another buffer to undo difference with current buffer
+do -- Get/Obtain changes from other window into the current window.
+dp -- Put the changes from current window into the other window.
+]c -- Jump to the next change.
+[c -- Jump to the previous change.
+Ctrl W + Ctrl W -- Switch to the other split window
+:diffsplit <filename> -- show diff between  lready open and another file in horrizontal split
